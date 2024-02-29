@@ -20,9 +20,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={inter.className + " " + "bg-[url('../public/Background.png')] w-full bg-cover bg-no-repeat"} >
         <Providers>
         <Navigation/>
         {children}

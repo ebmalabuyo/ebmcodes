@@ -8,6 +8,7 @@ import Logo from './clientComponents/Logo'
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { RiArrowDropDownLine } from "react-icons/ri";
 
 
 type NavLink = {
@@ -49,7 +50,7 @@ const links = [
     page: "",
     sublinks: [
       {
-        title: "Tech Stack",
+        title: "Technology",
         page: "/Techstack"
       },
       {
@@ -69,10 +70,13 @@ function Sublinker({item} : {item: NavLink}) {
         {
         item.sublinks ? 
         <div className='relative'>
-          <li >
+          <div className='flex'>
+          <li>
           {item.title}
           </li>
-          <ul className='absolute mt-5 dark:bg-[#18181D] bg-slate-50 '>
+          <RiArrowDropDownLine size={20}/>
+          </div>
+          <ul className={`absolute mt-5 dark:bg-[#18181D] bg-slate-100 p-3 text-sm flex-col gap-3 -z-10 `}>
                 { 
                 item.sublinks.map((each : any) => {
                   return <li className='text-center' key={each.title}><Link href={each.page}>{each.title}</Link></li>
@@ -99,7 +103,6 @@ export default function Navigation() {
           {links.map((each) => { 
             
             return <div key={each.title}><Sublinker item={each}/></div>
-          
           }
             )
               }
