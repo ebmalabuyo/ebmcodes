@@ -76,7 +76,7 @@ function Sublinker({item} : {item: NavLink}) {
           </li>
           <RiArrowDropDownLine size={20}/>
           </div>
-          <ul className={`absolute mt-5 dark:bg-[#18181D] bg-slate-100 p-3 text-sm flex-col gap-3 -z-10 `}>
+          <ul className={`absolute mt-4 dark:bg-[#18181D] bg-slate-100/50 p-4 text-sm  flex flex-col gap-3 -z-10 rounded-b-md`}>
                 { 
                 item.sublinks.map((each : any) => {
                   return <li className='text-center' key={each.title}><Link href={each.page}>{each.title}</Link></li>
@@ -95,7 +95,7 @@ function Sublinker({item} : {item: NavLink}) {
 
 export default function Navigation() {
   return (
-    <nav className='text-sm flex justify-between p-4 m-4 max-w-4xl absolute left-0 right-0 ml-auto mr-auto top-0 dark:bg-[#18181D] bg-slate-100'>
+    <nav className='text-sm flex justify-between p-3 pl-10 pr-10 m-5 max-w-6xl absolute left-0 right-0 ml-auto mr-auto top-0 dark:bg-[#18181D]/50 bg-slate-100/50 rounded-md'>
 
       <div>
         <ul className='flex gap-6'>
