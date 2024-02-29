@@ -9,6 +9,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { RiArrowDropDownLine } from "react-icons/ri";
+import DropdownLink from './clientComponents/DropdownLink';
 
 
 type NavLink = {
@@ -69,21 +70,7 @@ function Sublinker({item} : {item: NavLink}) {
       <ul>
         {
         item.sublinks ? 
-        <div className='relative'>
-          <div className='flex'>
-          <li>
-          {item.title}
-          </li>
-          <RiArrowDropDownLine size={20}/>
-          </div>
-          <ul className={`absolute mt-4 dark:bg-[#18181D] bg-slate-100/50 p-4 text-sm  flex flex-col gap-3 -z-10 rounded-b-md`}>
-                { 
-                item.sublinks.map((each : any) => {
-                  return <li className='text-center' key={each.title}><Link href={each.page}>{each.title}</Link></li>
-                })
-                }
-          </ul>
-      </div>
+        <DropdownLink item={item}/>
         :
         <Link href={item.page as string}>{item.title}</Link> 
         }
@@ -112,7 +99,13 @@ export default function Navigation() {
           <ul className='flex gap-6'>
             {externalLinks.map(each => {
 
-              return <li key={each.foward}><a href={each.foward}>{each.logo}</a></li>
+              return <li key={each.foward}>
+                        <div className='transition duration-500 ease-in-out transform hover:scale-110'>
+                        <a href={each.foward}>
+                          {each.logo}
+                        </a>
+                        </div>
+                      </li>
             }
               )
                 }
