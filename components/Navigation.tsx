@@ -2,14 +2,15 @@
 import Link from 'next/link'
 import React from 'react'
 
-import ThemeSwitch from './clientComponents/ThemeSwitch'
-import Logo from './clientComponents/Logo'
+// client Components used
+import ThemeSwitch from './clientComponents/extras/ThemeSwitch'
+import Logo from './clientComponents/extras/Logo'
 
+//Icons
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import { RiArrowDropDownLine } from "react-icons/ri";
-import DropdownLink from './clientComponents/DropdownLink';
+import DropdownLink from './clientComponents/Nav/DropdownLink';
 
 
 type NavLink = {
@@ -82,8 +83,8 @@ function Sublinker({item} : {item: NavLink}) {
 
 export default function Navigation() {
   return (
-    <nav className='text-sm flex justify-between p-3 pl-10 pr-10 m-5 max-w-6xl absolute left-0 right-0 ml-auto mr-auto top-0 dark:bg-[#18181D]/50 bg-slate-100/50 rounded-md'>
-
+    <nav className='hidden text-sm md:flex justify-between p-3 pl-10 pr-10 m-5 max-w-6xl absolute left-0 right-0 ml-auto mr-auto top-0 dark:bg-[#18181D]/50 bg-slate-100/50 rounded-md'>
+      {/* Left side of Navigation */}
       <div>
         <ul className='flex gap-6'>
         <Logo/>
@@ -94,17 +95,17 @@ export default function Navigation() {
             )
               }
         </ul>
-        </div>
-        <div>
+      </div>
+      {/* Right side of navigation */}
+      <div>
           <ul className='flex gap-6'>
             {externalLinks.map(each => {
-
               return <li key={each.foward}>
-                        <div className='transition duration-500 ease-in-out transform hover:scale-110'>
-                        <a href={each.foward}>
-                          {each.logo}
-                        </a>
-                        </div>
+                          <div className='transition duration-500 ease-in-out transform hover:scale-110'>
+                            <a href={each.foward}>
+                              {each.logo}
+                            </a>
+                          </div>
                       </li>
             }
               )
@@ -112,8 +113,7 @@ export default function Navigation() {
           <hr className='h-5 border-t-2 '/>
           <ThemeSwitch/>
           </ul>
-          
-        </div>
+      </div>
     </nav>
   )
 }

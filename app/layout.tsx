@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import Navigation from "@/components/Navigation";
+import MobileNavigation from "@/components/clientComponents/MobileNavigation";
 
 
 const inter = Inter({ 
@@ -28,6 +29,7 @@ export default function RootLayout({
         <Navigation/>
         {children}
         </Providers>
+        <MobileNavigation/>
         </body>
     </html>
   );
