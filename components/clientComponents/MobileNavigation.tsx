@@ -10,6 +10,7 @@ import { MdEmail } from "react-icons/md";
 import { CgDetailsMore } from "react-icons/cg";
 import { IoCodeSlash } from "react-icons/io5";
 import { FaBookOpen } from "react-icons/fa";
+import ThemeSwitch from './extras/ThemeSwitch';
 
 
 
@@ -89,6 +90,7 @@ export default function MobileNavigation() {
   const [toggle, setToggle] = useState(false);
   return (
       <nav className='md:hidden mb-4 flex justify-center gap-6 fixed right-0 left-0 max-w-sm ml-auto mr-auto bottom-0 p-3 rounded-md dark:bg-[#18181D]/50 bg-slate-100/50'>
+            <ThemeSwitch styles='flex items-center'/>
             {links.map(each => {
               return <div key={each.page}><Sublinker item={each} state={toggle} setState={setToggle}/></div>
             })}

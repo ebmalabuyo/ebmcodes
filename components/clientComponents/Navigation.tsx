@@ -108,6 +108,8 @@ function Sublinker({item, state, setState} : SublinkProps) {
 
 }
 
+
+
 export default function Navigation() {
   // STATE TO MANAGE THE NAVBARS TOGGLE 
 
@@ -142,7 +144,7 @@ export default function Navigation() {
               )
                 }
           <hr className='h-5 border-t-2 '/>
-          <ThemeSwitch/>
+          <ThemeSwitch styles=""/>
           </ul>
       </div>
     </nav>

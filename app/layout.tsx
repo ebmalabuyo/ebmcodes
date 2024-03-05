@@ -28,8 +28,9 @@ export default function RootLayout({
         <Providers>
         <Navigation/>
         {children}
-        </Providers>
         <MobileNavigation/>
+        </Providers>
+        
         </body>
     </html>
   );
