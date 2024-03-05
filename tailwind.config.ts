@@ -19,6 +19,10 @@ const config: Config = {
           "background-gradient" : "url(public/Background.png)"
       },
     },
+    colors: {
+      darkish: "#18181D",
+      lightish: "#f1f5f9"
+    }
   },
   plugins: [],
 };
