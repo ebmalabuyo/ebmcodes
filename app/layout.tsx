@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
-import Navigation from "@/components/Navigation";
+import Navigation from "@/components/clientComponents/Navigation";
 import MobileNavigation from "@/components/clientComponents/MobileNavigation";
 
 
@@ -24,7 +24,7 @@ export default function RootLayout({
   
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className + " " + "bg-[url('../public/Background.png')] w-full bg-cover bg-no-repeat"} >
+      <body className={inter.className + " " + "bg-[url('../public/Background.png')] w-full bg-cover bg-no-repeat absolute"} >
         <Providers>
         <Navigation/>
         {children}

@@ -1,22 +1,28 @@
-
+"use client"
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 
 // client Components used
-import ThemeSwitch from './clientComponents/extras/ThemeSwitch'
-import Logo from './clientComponents/extras/Logo'
+import ThemeSwitch from './extras/ThemeSwitch'
+import Logo from './extras/Logo'
 
 //Icons
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import DropdownLink from './clientComponents/Nav/DropdownLink';
+import { RiArrowDropDownLine } from "react-icons/ri";
 
 
 type NavLink = {
   title: string,
   page: string,
   sublinks?: NavLink[],
+}
+
+type SublinkProps = {
+  item: NavLink,
+  state: boolean, // HANDLES TOGGLE
+  setState: (state : boolean) => void //SETS TOGGLE
 }
 
 const externalLinks = [
@@ -65,15 +71,36 @@ const links = [
 
 
 
-function Sublinker({item} : {item: NavLink}) {
+function Sublinker({item, state, setState} : SublinkProps) {
   return(
     <>
       <ul>
+        {/* IF SUBLINKS CREATE DROP DOWN MENU */}
         {
         item.sublinks ? 
-        <DropdownLink item={item}/>
+        <div className='relative' >
+          <div className='flex cursor-pointer' onClick={() => setState(!state)}>
+              <li>
+              {item.title}
+              </li>
+              <RiArrowDropDownLine size={20} className={`transition-all ease-in-out ${state ? "" : "-rotate-180"} `}/>
+          </div>
+              {/* DROP DOWN MENU  */}
+              {item.sublinks &&
+              <ul className={` absolute mt-4 dark:bg-[#18181D] bg-slate-100/50 p-3 text-sm flex-col gap-3 -z-10 rounded-b-md transition-all ease-in-out ${state ? "flex opacity-100" : "hidden opacity-0"} `}>
+                    {/* ON CLICK FOR EACH ITEM IT WILL SET THE TOGGLE BACK TO FALSE */}
+                    { 
+                    item.sublinks.map((each : any) => {
+                      return <li onClick={()=>setState(false)} className='text-center' key={each.title}><Link href={each.page}>{each.title}</Link></li>
+                    })
+                    }
+              </ul>
+              }
+        </div>
         :
-        <Link href={item.page as string}>{item.title}</Link> 
+        // ELSE CREATE A REGULAR LINK TAG
+                // ON CLICK IT WILL SET THE TOGGLE BACK TO FALSE 
+        <Link href={item.page as string} onClick={()=>setState(false)}>{item.title}</Link> 
         }
       </ul>
     </>
@@ -82,6 +109,10 @@ function Sublinker({item} : {item: NavLink}) {
 }
 
 export default function Navigation() {
+  // STATE TO MANAGE THE NAVBARS TOGGLE 
+
+  const [toggle, setToggle] = useState(false)
+
   return (
     <nav className='hidden text-sm md:flex justify-between p-3 pl-10 pr-10 m-5 max-w-6xl absolute left-0 right-0 ml-auto mr-auto top-0 dark:bg-[#18181D]/50 bg-slate-100/50 rounded-md'>
       {/* Left side of Navigation */}
@@ -90,7 +121,7 @@ export default function Navigation() {
         <Logo/>
           {links.map((each) => { 
             
-            return <div key={each.title}><Sublinker item={each}/></div>
+            return <div key={each.title}><Sublinker item={each} state={toggle} setState={setToggle}/></div>
           }
             )
               }

@@ -11,10 +11,18 @@ import { CgDetailsMore } from "react-icons/cg";
 import { IoCodeSlash } from "react-icons/io5";
 import { FaBookOpen } from "react-icons/fa";
 
+
+
 type NavLink = {
   icon: ReactNode,
   page: string,
   sublinks?: NavLink[],
+}
+
+type SublinkProps = {
+  item: NavLink,
+  state: boolean,
+  setState: (state : boolean) => void
 }
 
 const links = [
@@ -50,41 +58,39 @@ const links = [
     }
   ]
 
-function Sublinker({item} : {item: NavLink}) {
+
+
+function Sublinker({item, state, setState} : SublinkProps) {
+  
   return (
   <>
       <ul>
         {
         item.sublinks ? 
-        <MobileDropdownLink item={item}/>
+        <div className='relative'>
+        <li className='flex cursor-pointer' onClick={()=>setState(!state)}>{item.icon}</li>
+        <ul className={` ${state ? "flex" : "hidden"} flex-col gap-3 absolute -top-32 dark:bg-[#18181D]/50 bg-slate-100/50 p-4 pr-4 pl-4 rounded-t-md`}>
+          {item.sublinks && 
+            item.sublinks.map((each : any) => {
+              return <li key={each.page} onClick={()=>setState(false)}><Link href={each.page}>{each.icon}</Link> </li>
+            })
+          }
+        </ul>
+      </div>
         :
-        <Link href={item.page as string}>{item.icon}</Link> 
+        <div onClick={()=> setState(false)}><Link href={item.page as string}>{item.icon}</Link></div>
         }
       </ul>
     </>)
 }
 
-function MobileDropdownLink({item} : {item: NavLink}) {
-  const [toggle, setToggle] = useState(false);
-  return (
-      <div className='relative'>
-        <li className='flex cursor-pointer'>{item.icon}</li>
-        <ul className='absolute -top-24'>
-          {item.sublinks && 
-            item.sublinks.map((each : any) => {
-              return <li key={each.title}><Link href={each.page}>{each.icon}</Link> </li>
-            })
-          }
-        </ul>
-      </div>
-  )
-}
 
 export default function MobileNavigation() {
+  const [toggle, setToggle] = useState(false);
   return (
-      <nav  className='flex justify-center gap-6 absolute right-0 left-0 max-w-sm ml-auto mr-auto bottom-0 p-3 rounded-md  dark:bg-[#18181D]/50 bg-slate-100/50'>
+      <nav className='md:hidden mb-4 flex justify-center gap-6 fixed right-0 left-0 max-w-sm ml-auto mr-auto bottom-0 p-3 rounded-md dark:bg-[#18181D]/50 bg-slate-100/50'>
             {links.map(each => {
-              return <div key={each.page}><Sublinker item={each}/></div>
+              return <div key={each.page}><Sublinker item={each} state={toggle} setState={setToggle}/></div>
             })}
       </nav>
   )
