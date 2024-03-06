@@ -21,7 +21,8 @@ const config: Config = {
     },
     colors: {
       darkish: "#18181D",
-      lightish: "#f1f5f9"
+      lightish: "#f1f5f9",
+      darkGray: "#555050"
     }
   },
   plugins: [],

@@ -28,27 +28,27 @@ type SublinkProps = {
 
 const links = [
     {
-        icon: <FaHome size={36}/>,
+        icon: <FaHome size={30}/>,
         page: "/"
       },
     {
-      icon: <IoMdPerson size={36}/>,
+      icon: <IoMdPerson size={30}/>,
       page: "/About"
     },
     {
-      icon: <MdOutlineWork size={36}/>,
+      icon: <MdOutlineWork size={30}/>,
       page: "/Work"
     },
     {
-      icon: <MdEmail size={36}/>,
+      icon: <MdEmail size={30}/>,
       page: "/Contact"
     },
     {
-      icon: <CgDetailsMore size={36}/>,
+      icon: <CgDetailsMore size={30}/>,
       page: "",
       sublinks: [
         {
-          icon: <IoCodeSlash size={36}/>,
+          icon: <IoCodeSlash size={30}/>,
           page: "/Techstack"
         },
         {
@@ -70,7 +70,7 @@ function Sublinker({item, state, setState} : SublinkProps) {
         item.sublinks ? 
         <div className='relative'>
         <li className='flex cursor-pointer' onClick={()=>setState(!state)}>{item.icon}</li>
-        <ul className={` ${state ? "flex" : "hidden"} flex-col gap-3 absolute -top-32 dark:bg-darkish/50 bg-lightish/50 p-4 pr-4 pl-4 rounded-t-md`}>
+        <ul className={` ${state ? "flex" : "hidden"} flex-col gap-3 absolute -top-32 right-1 dark:bg-darkish bg-lightish p-4 pr-2 pl-2 rounded-t-md `}>
           {item.sublinks && 
             item.sublinks.map((each : any) => {
               return <li key={each.page} onClick={()=>setState(false)}><Link href={each.page}>{each.icon}</Link> </li>
@@ -89,7 +89,7 @@ function Sublinker({item, state, setState} : SublinkProps) {
 export default function MobileNavigation() {
   const [toggle, setToggle] = useState(false);
   return (
-      <nav className='md:hidden mb-4 flex justify-center gap-6 fixed right-0 left-0 max-w-sm ml-auto mr-auto bottom-0 p-3 rounded-md dark:bg-darkish/50 bg-lightish/50'>
+      <nav className='z-10 md:hidden mb-4 flex justify-center gap-6 fixed right-0 left-0 max-w-xs ml-auto mr-auto bottom-0 p-5 rounded-md dark:bg-darkish bg-lightish'>
             <ThemeSwitch styles='flex items-center'/>
             {links.map(each => {
               return <div key={each.page}><Sublinker item={each} state={toggle} setState={setToggle}/></div>

@@ -143,7 +143,7 @@ export default function Navigation() {
             }
               )
                 }
-          <hr className='h-5 border-t-2 '/>
+          <hr className='h-[25px] border border-black'/>
           <ThemeSwitch styles=""/>
           </ul>
       </div>
