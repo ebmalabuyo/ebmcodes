@@ -89,7 +89,7 @@ function Sublinker({item, state, setState} : SublinkProps) {
 export default function MobileNavigation() {
   const [toggle, setToggle] = useState(false);
   return (
-      <nav className='z-10 md:hidden mb-4 flex justify-center gap-6 fixed right-0 left-0 max-w-xs ml-auto mr-auto bottom-0 p-5 rounded-md dark:bg-darkish bg-lightish'>
+      <nav className=' flex z-10 md:hidden mb-4  justify-center gap-6 fixed right-0 left-0 max-w-xs ml-auto mr-auto bottom-0 p-5 rounded-md dark:bg-darkish bg-lightish'>
             <ThemeSwitch styles='flex items-center'/>
             {links.map(each => {
               return <div key={each.page}><Sublinker item={each} state={toggle} setState={setToggle}/></div>

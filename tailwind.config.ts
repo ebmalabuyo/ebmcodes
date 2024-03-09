@@ -8,6 +8,12 @@ const config: Config = {
   ],
   darkMode: "class",
   theme: {
+    screens: {
+      "ipadmini": "698px",
+      "md" : "821px",
+      "tablet" : "1020px"
+
+    },
     extend: {
       fontFamily: {
         inter: ["Inter, sans-serif"]

@@ -4,6 +4,7 @@ import "./globals.css";
 import { Providers } from "./providers";
 import Navigation from "@/components/clientComponents/Navigation";
 import MobileNavigation from "@/components/clientComponents/MobileNavigation";
+import Footer from "@/components/Footer";
 
 
 const inter = Inter({ 
@@ -29,6 +30,7 @@ export default function RootLayout({
         <Navigation/>
         {children}
         <MobileNavigation/>
+        <Footer/>
         </Providers>
         
         </body>
