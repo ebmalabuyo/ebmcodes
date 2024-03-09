@@ -1,0 +1,18 @@
+[
+    {
+        "title":"Gibber.chat - Language Translation & Instant Messenger",
+        "image":"gibberImage.png",
+        "logo" : "gibberLogo.jpg",
+        "description":"I developed and enhanced features on the mobile and web application for their language translation and instant messaging platform. The first phase of my internship involved designing an algorithm, then addressing various edge case scenarios and exploring potential optimizations and alternative approaches with other engineeers. After, I transitioned to the implementation phase, which involved integrating data collection functions into the migration workflow and interacting with an internal API to clean up orphaned data. I received valuable mentorship and expanded my knowledge in distributed backend architecture and reactive programming.",
+        "link" : "https://www.gibber.chat/",
+        "linkLabel": "Visit Site"
+      },
+      {
+        "title":"UMV.MT",
+        "image":"umImage.png",
+        "logo": "umLogo.jpg",
+        "description":"This was a contract role for a Hip-Hop Dance Organization at Cal Poly. The club wanted a site to display basic information about the club. I collaborated with 2 other developers to create the application for the club. I utilized React and Tailwind to create mobile-responsive site. From this experiecne I got comfortable with create resuable components to speed up development time. I also utilized Google's API to integrate the clubs Google Calendar for upcoming events.",
+        "link": "https://umv.mt/",
+        "linkLabel": "Visit Site"
+      }
+]
