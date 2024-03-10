@@ -87,7 +87,7 @@ function Sublinker({item, state, setState} : SublinkProps) {
           </div>
               {/* DROP DOWN MENU  */}
               {item.sublinks &&
-              <ul className={` absolute mt-4 dark:bg-darkish bg-lightish/50 p-3 text-sm flex-col gap-3 -z-10 rounded-b-md transition-all ease-in-out ${state ? "flex opacity-100" : "hidden opacity-0"} `}>
+              <ul className={` absolute mt-4 dark:bg-darkish bg-lightish p-3 text-sm flex-col gap-3 -z-10 rounded-b-md transition-all ease-in-out ${state ? "flex opacity-100" : "hidden opacity-0"} `}>
                     {/* ON CLICK FOR EACH ITEM IT WILL SET THE TOGGLE BACK TO FALSE */}
                     { 
                     item.sublinks.map((each : any) => {
@@ -116,7 +116,7 @@ export default function Navigation() {
   const [toggle, setToggle] = useState(false)
 
   return (
-    <nav className='hidden text-sm md:flex justify-between p-3 pl-10 pr-10 m-5 max-w-6xl absolute left-0 right-0 ml-auto mr-auto top-0 dark:bg-darkish/50 bg-lightish/50 rounded-md'>
+    <nav className='hidden text-sm md:flex justify-between p-3 pl-10 pr-10 m-5 max-w-6xl fixed left-0 right-0 ml-auto mr-auto top-0 dark:bg-darkish bg-lightish rounded-md z-10'>
       {/* Left side of Navigation */}
       <div>
         <ul className='flex gap-6'>

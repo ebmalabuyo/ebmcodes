@@ -10,7 +10,7 @@ type LinkButtonProps = {
 
 export default function LinkButton({dark, label, direct, resume} : LinkButtonProps) {
   let ColorStyles = "";
-  const defaultStyle = "p-4 rounded-md max-w-[400px] md:w-auto text-center" + " ";
+  const defaultStyle = "p-4 rounded-md text-center w-full ipadmini:max-w-[200px]" + " ";
 
   // DETERMINES IF A DARK COLORED BG OR WHITE
   if (dark) {
