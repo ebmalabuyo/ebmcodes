@@ -8,6 +8,12 @@ const config: Config = {
   ],
   darkMode: "class",
   theme: {
+    screens: {
+      "ipadmini": "698px",
+      "md" : "821px",
+      "tablet" : "1020px"
+
+    },
     extend: {
       fontFamily: {
         inter: ["Inter, sans-serif"]
@@ -19,6 +25,11 @@ const config: Config = {
           "background-gradient" : "url(public/Background.png)"
       },
     },
+    colors: {
+      darkish: "#18181D",
+      lightish: "#f1f5f9",
+      darkGray: "#555050"
+    }
   },
   plugins: [],
 };

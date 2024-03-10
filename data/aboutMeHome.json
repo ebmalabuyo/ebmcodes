@@ -1,0 +1,21 @@
+[
+    {
+        "title": "About me",
+        "description": "Who I am and what I do",
+        "image": "meLogo.png",
+        "page": "/About"
+    },
+    {
+        "title": "Technologies",
+        "description": "The dev tools, apps, and devices I use",
+        "image": "techstackLogo.png",
+        "page": "/Techstack"
+    },
+    {
+        "title": "Bookshelf",
+        "description": "Books and pieces of advice I enjoy reading",
+        "image": "BookshelfLogo.png",
+        "page": "/Bookshelf"
+    }
+
+]
