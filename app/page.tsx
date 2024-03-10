@@ -47,7 +47,7 @@ export default function Home() {
             {/* GET TO KNOW ME SECTION */}
           <section className="mt-16 p-8 md:p-12">
               <h1 className="font-extrabold md:text-3xl text-xl">Get To Know Me</h1>
-                <div className=" ipadmini:grid ipadmini:grid-cols-2 flex flex-col gap-6 mt-4 p-6">
+                <div className=" ipadmini:grid ipadmini:grid-cols-2 flex flex-col gap-6 mt-4 p-10">
                     {aboutMeInfo.map(each=> {return(
                       <div key={each.title}><AboutMeCard {...each}/></div>
                     )})}
