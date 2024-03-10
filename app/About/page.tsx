@@ -56,9 +56,9 @@ export default function About() {
                             </p>
                           </div>
 
-                          <p>{"Let's build something great,"}</p>
+                          <p className='text-center ipadmini:text-left '>{"Let's build something great,"}</p>
                           
-                          <h1 className='font-mono font-semibold text-4xl'>EBM</h1>
+                          <h1 className='font-mono font-semibold text-4xl w-full text-center ipadmini:text-left'>EBM</h1>
                           <LinkButton dark={true} label='Get in touch -->' resume={false} direct='/Contact'/>
                   </div>
               </section>

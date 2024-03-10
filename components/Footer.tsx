@@ -40,9 +40,14 @@ const internalLinks = [
 export default function Footer() {
   return (
     <footer className="text-sm ipadmini:flex ipadmini:justify-center bg-[url('../public/BackgroundBottom.png')] bg-cover bg-no-repeat p-6 border-t border-darkGray">
-        <div className="ipadmini:w-3/4 ipadmini:max-w-6xl ipadmini:p-2 flex flex-col ipadmini:flex-row md:items-center ipadmini:justify-between gap-8 p-6">
+        <div className="ipadmini:w-3/4 ipadmini:max-w-6xl ipadmini:p-2 flex flex-col ipadmini:flex-row md:items-center ipadmini:justify-centert gap-8 p-6">
         
-        <div className='flex flex-col ipadmini:flex-row gap-8'>
+        <div className='flex flex-col ipadmini:flex-row gap-8 ipadmini:justify-end w-full'>
+        <div className='mb-24 ipadmini:mb-18 md:mb-0 ipadmini:mr-auto w-full'>
+              <Logo/>
+              <h1>{"Thanks for stopping by :)"}</h1>
+          </div>
+
             <ul className='flex flex-col gap-2'>
               <h1 className='font-bold mb-2'>Links</h1>
                 {internalLinks.map(each=> {
@@ -56,14 +61,15 @@ export default function Footer() {
                   return <a key={each.title} href={each.foward}>{each.title}</a>
                 })}
             </ul>
-        </div>
 
-          <div className='mb-24 ipadmini:mb-18'>
-              <Logo/>
-              <h1>Thanks for stopping by</h1>
+
+            <div className='mb-24 ipadmini:mb-18 md:mb-0'>
               <p>Created with React</p>
               <p>© EBMCodes. All Rights Reserved 2024.</p>
           </div>
+        </div>
+
+          
        
         </div>
     </footer>
