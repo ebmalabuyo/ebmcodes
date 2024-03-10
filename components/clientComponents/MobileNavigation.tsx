@@ -1,6 +1,8 @@
 'use client'
-import React, { ReactNode, useState } from 'react'
+import React, { ReactNode, useEffect, useState } from 'react'
 import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
+
 
 //Icons
 import { FaHome } from "react-icons/fa";
@@ -62,7 +64,8 @@ const links = [
 
 
 function Sublinker({item, state, setState} : SublinkProps) {
-  
+  const path = usePathname()
+
   return (
   <>
       <ul>
@@ -70,16 +73,16 @@ function Sublinker({item, state, setState} : SublinkProps) {
         item.sublinks ? 
         <div className='relative'>
         <li className='flex cursor-pointer' onClick={()=>setState(!state)}>{item.icon}</li>
-        <ul className={` ${state ? "flex" : "hidden"} flex-col gap-3 absolute -top-32 right-1 dark:bg-darkish bg-lightish p-4 pr-2 pl-2 rounded-t-md `}>
+        <ul className={` ${state ? "flex" : "hidden"} flex-col gap-3 absolute -top-32 right-0 dark:bg-darkish bg-lightish p-4 pr-2 pl-2 rounded-t-md items-center`}>
           {item.sublinks && 
             item.sublinks.map((each : any) => {
-              return <li key={each.page} onClick={()=>setState(false)}><Link href={each.page}>{each.icon}</Link> </li>
+              return <li key={each.page} onClick={()=>setState(false)} className={`${path === each.page ? "dark:bg-darkGray bg-lightGray" : ""} rounded-lg text-center`}><Link href={each.page}>{each.icon}</Link> </li>
             })
           }
         </ul>
       </div>
         :
-        <div onClick={()=> setState(false)}><Link href={item.page as string}>{item.icon}</Link></div>
+        <div onClick={()=> setState(false)} className={`${path === item.page ? "dark:bg-darkGray bg-lightGray" : ""} rounded-lg `}><Link href={item.page as string}>{item.icon}</Link></div>
         }
       </ul>
     </>)
@@ -88,8 +91,9 @@ function Sublinker({item, state, setState} : SublinkProps) {
 
 export default function MobileNavigation() {
   const [toggle, setToggle] = useState(false);
+
   return (
-      <nav className=' flex z-10 md:hidden mb-4  justify-center gap-6 fixed right-0 left-0 max-w-xs ml-auto mr-auto bottom-0 p-5 rounded-md dark:bg-darkish bg-lightish'>
+      <nav className=' w-full flex z-10 md:hidden mb-4  justify-center gap-6 fixed right-0 left-0 max-w-xs ml-auto mr-auto bottom-0 p-5 rounded-md dark:bg-darkish bg-lightish'>
             <ThemeSwitch styles='flex items-center'/>
             {links.map(each => {
               return <div key={each.page}><Sublinker item={each} state={toggle} setState={setToggle}/></div>

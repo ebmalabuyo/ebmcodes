@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function About() {
   return (
-    <div className="mt-36 md:mt-48 mb-36 md:flex md:justify-center">
+    <div className="mt-24 md:mt-48 mb-36 md:flex md:justify-center">
       <div className="w-full lg:w-3/4 max-w-6xl md:p-2">
 
         <section className='p-4'>
