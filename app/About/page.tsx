@@ -11,7 +11,7 @@ export default function About() {
 
               {/* HEADING  */}
               <div className='text-center ipadmini:text-left'>
-                <h1 className='font-extrabold text-2xl ipadmini:text-4xl '>A little bit about me</h1>
+                <h1 className='font-extrabold text-2xl ipadmini:text-4xl '>A Little Bit About Me</h1>
                 <p>Who I am and what I do</p>
               </div>
               {/* END------- HEADING */}
