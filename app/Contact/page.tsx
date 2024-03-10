@@ -60,13 +60,15 @@ function ContactCards({description, component} : {
   component: ReactElement
 }) {
   return(
-    <div className='text-xs md:text-lg dark:bg-darkish bg-lightish p-14 rounded-xl text-center flex flex-col justify-center items-center'>
+    <div className='text-[12px] ipadmini:text-xs md:text-lg dark:bg-darkish bg-lightish p-4 ipadmini:p-14 md:p-16 rounded-xl text-center flex flex-col justify-center items-center'>
         <div>
           {component}
         </div>
-        <p>
+        <div>
+        <p className='w-full '>
           {description}
         </p>
+        </div>
     </div>
   )
 }
@@ -86,13 +88,14 @@ export default function Contact() {
           {/* END------- HEADING */}
 
           {/* BODY */}
-          <section className='p-4 mt-10 grid gap-8 grid-cols-2 ipadmini:grid-cols-3'>
+          <p className='w-full text-center mt-10 mb-2 text-lg'>Please reach out to me at: <a href='mailto:elijahbmalabuyo@gmail.com' className='underline'>elijahbmalabuyo@gmail.com</a></p>
+          <section className=' p-10 grid justify-center gap-8 grid-cols-2 ipadmini:grid-cols-3'>
                 {offers.map(each=> {
                   return <ContactCards key={each.description} {...each}/>
                 })}
           </section>
 
-          <p className='w-full text-center mt-10 mb-4 text-lg'>Please reach out to me at: <a href='mailto:elijahbmalabuyo@gmail.com' className='underline'>elijahbmalabuyo@gmail.com</a></p>
+          
           <div className='flex flex-row gap-6 justify-center w-full'>
               {externalLinks.map(each=>{
                 return (
