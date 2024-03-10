@@ -1,0 +1,50 @@
+[
+    {
+        "title":"Gibber.chat - Language Translation & Instant Messenger",
+        "image":"gibberImage.png",
+        "logo" : "gibberLogo.jpg",
+        "description":"I developed and enhanced features on the mobile and web application for their language translation and instant messaging platform. The first phase of my internship involved designing an algorithm, then addressing various edge case scenarios and exploring potential optimizations and alternative approaches with other engineeers. After, I transitioned to the implementation phase, which involved integrating data collection functions into the migration workflow and interacting with an internal API to clean up orphaned data. I received valuable mentorship and expanded my knowledge in distributed backend architecture and reactive programming.",
+        "link" : "https://www.gibber.chat/",
+        "linkLabel": "Visit Site"
+      },
+      {
+        "title":"UMV.MT",
+        "image":"umImage.png",
+        "logo": "umLogo.jpg",
+        "description":"This was a contract role for a Hip-Hop Dance Organization at Cal Poly. The club wanted a site to display basic information about the club. I collaborated with 2 other developers to create the application for the club. I utilized React and Tailwind to create mobile-responsive site. From this experiecne I got comfortable with create resuable components to speed up development time. I also utilized Google's API to integrate the clubs Google Calendar for upcoming events.",
+        "link": "https://umv.mt/",
+        "linkLabel": "Visit Site"
+      },
+      {
+        "title": "Tech Employment Machine Learning",
+        "image": "TechMLImage.png",
+        "logo": "TechMLLogo.jpg",
+        "description": "For my Cal Poly senior project, I conducted research on tech job employment utilizing data comprised of applicants from online job boards. I compared four machine learning algorithms to classify applicants as employed or not employed. A full thesis and conclusion of my research can be viewed along with the code to my analysis.",
+        "link": "https://github.com/ebmalabuyo/TechEmploymentMachineLearning-",
+        "linkLabel": "View Project"
+        },
+        {
+        "title": "Music Playlist Converter",
+        "image": "playlistConverterImage.png",
+        "logo": "playlistConverterLogo.png",
+        "description": "With Google and Spotify's API, I was in charge of creating a backend endpoint that performs the song matching logic to create a YouTube playlist for authenticated Google users only. This application allows users to convert Spotify playlists to YouTube playlists and vice versa. We are constantly trying to improve and add to the app so feel free to check it out.",
+        "link": "https://github.com/pth1209/spotify-youtube-transformer",
+        "linkLabel": "View Project"
+        },
+        {
+        "title": "K-means Clustering & Classification",
+        "image": "clusterImage.png",
+        "logo": "clusterLogo.jpg",
+        "description": "For my Data Science I course, I analyzed a dataset of my choice to tell a story and find new insights utilizing any of the algorithms we learned throughout the quarter. I have a passion for basketball and thought it would be fun to analyze player statistics. In this project, I utilized K-Means Clustering & Elbow Method to redefine & visualize player positions on per-game averages. I also evaluated All-Star player averages through K-Means Classification to find alternate players for the NBA reward. I extracted and filtered JSON API from NBA.com to construct and preprocess player datasets of the past 10 seasons.",
+        "link": "https://github.com/ebmalabuyo/nba_kclustering_classification",
+        "linkLabel": "View Project"
+        },
+        {
+        "title": "Virtual World Simulation & Game",
+        "image": "virtualWorldImage.png",
+        "logo": "virtualWorldLogo.png",
+        "description": "Here is a quarter-long project for my Object-Oriented Programming and Design Course taught in Java. Here I refactored & customized large-scale back-end from a functional-based to an object-oriented design. I also improved functionality by replacing a single-step pathing strategy with an A* searching algorithm. Lastly, I implemented interfaces, abstract classes, and inheritance to simplify code and enhance readability.",
+        "link": "https://github.com/ebmalabuyo/Virtual_World_Project",
+        "linkLabel": "View Project"
+        }
+]
