@@ -39,7 +39,7 @@ const internalLinks = [
 
 export default function Footer() {
   return (
-    <footer className="text-sm ipadmini:flex ipadmini:justify-center bg-[url('../public/BackgroundBottom.png')] bg-cover bg-no-repeat p-6 ">
+    <footer className="text-sm ipadmini:flex ipadmini:justify-center bg-[url('../public/BackgroundBottom.png')] bg-cover bg-no-repeat p-6 border-t border-darkGray">
         <div className="ipadmini:w-3/4 ipadmini:max-w-6xl ipadmini:p-2 flex flex-col ipadmini:flex-row md:items-center ipadmini:justify-between gap-8 p-6">
         
         <div className='flex flex-col ipadmini:flex-row gap-8'>
@@ -58,7 +58,7 @@ export default function Footer() {
             </ul>
         </div>
 
-          <div className='mb-24'>
+          <div className='mb-24 ipadmini:mb-18'>
               <Logo/>
               <h1>Thanks for stopping by</h1>
               <p>Created with React</p>
