@@ -73,7 +73,7 @@ function Sublinker({item, state, setState} : SublinkProps) {
         item.sublinks ? 
         <div className='relative'>
         <li className='flex cursor-pointer' onClick={()=>setState(!state)}>{item.icon}</li>
-        <ul className={` ${state ? "flex" : "hidden"} flex-col gap-3 absolute -top-32 right-0 dark:bg-darkish bg-lightish p-4 pr-2 pl-2 rounded-t-md items-center`}>
+        <ul className={` ${state ? "flex" : "hidden"} flex-col gap-3 absolute -top-32 -right-2 dark:bg-darkish bg-lightish border-t border-r border-l border-lightGray p-4 pr-2 pl-2 rounded-t-xl items-center`}>
           {item.sublinks && 
             item.sublinks.map((each : any) => {
               return <li key={each.page} onClick={()=>setState(false)} className={`${path === each.page ? "dark:bg-darkGray bg-lightGray" : ""} rounded-lg text-center`}><Link href={each.page}>{each.icon}</Link> </li>
@@ -93,7 +93,7 @@ export default function MobileNavigation() {
   const [toggle, setToggle] = useState(false);
 
   return (
-      <nav className=' w-full flex z-10 md:hidden mb-4  justify-center gap-6 fixed right-0 left-0 max-w-xs ml-auto mr-auto bottom-0 p-5 rounded-md dark:bg-darkish bg-lightish'>
+      <nav className='border border-lightGray w-full flex z-10 md:hidden mb-4  justify-center gap-6 fixed right-0 left-0 max-w-xs ml-auto mr-auto bottom-0 p-5 rounded-xl dark:bg-darkish bg-lightish'>
             <ThemeSwitch styles='flex items-center'/>
             {links.map(each => {
               return <div key={each.page}><Sublinker item={each} state={toggle} setState={setToggle}/></div>
