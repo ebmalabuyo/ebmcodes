@@ -52,7 +52,7 @@ export default function About() {
                           <div>
                             <p>
                             Feel free to reach out via <a href="mailto:elijahbmalabuyo@gmail.com" className='underline underline-offset-4'>e-mail</a>, or follow me on <a href='https://github.com/ebmalabuyo' className='underline underline-offset-4'>Github</a>. 
-                            Want to see where I’ve worked? Check out my <a href="" className='underline underline-offset-4'>Resume</a>, or Connect with me on <a href="" className='underline underline-offset-4'>Linkedin</a>.
+                            Want to see where I’ve worked? Check out my <a href={"/technicalresume.pdf"} className='underline underline-offset-4'>Resume</a>, or Connect with me on <a href="https://www.linkedin.com/in/emalabuyo/" className='underline underline-offset-4'>Linkedin</a>.
                             </p>
                           </div>
 

@@ -24,7 +24,7 @@ export default function Home() {
             </span>
             <p className=" text-darkGray max-w-xl text-center md:text-left">A Software Engineer that helps turns visions into digital realties and provides tangible solutions through technology. I specialize in building modern mobile and web-based applicaitions. </p>
             <div className="flex flex-col md:flex-row mt-2 gap-6 w-full ipadmini:items-center">
-                <LinkButton dark={true} label="View my Resume" direct="" resume={true} />
+                <LinkButton dark={true} label="View my Resume" direct="/technicalresume.pdf" resume={true} />
                 <LinkButton dark={false} label="Get in touch" direct="/Contact" resume={false}/>
             </div>
           </section>
