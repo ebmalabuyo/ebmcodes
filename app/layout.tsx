@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 const inter = Inter({ 
   weight:["400","700"],
   style: 'normal',
+  variable:"--font-inter" ,
   subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -25,7 +26,7 @@ export default function RootLayout({
   
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className + " " + "bg-[url('../public/Background.png')] w-full bg-cover bg-no-repeat absolute"} >
+      <body className={inter.variable + " " + "inter bg-[url('../public/Background.png')] w-full bg-cover bg-no-repeat absolute"} >
         <Providers>
         <Navigation/>
         {children}
