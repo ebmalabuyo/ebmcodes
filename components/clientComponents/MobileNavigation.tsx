@@ -137,7 +137,7 @@ export default function MobileNavigation() {
   },[toggle])
 
   return (
-      <nav className='border md:hidden border-lightGray max-w-md flex z-10  mb-4  justify-center gap-6 fixed right-0 left-0 max-w-s ml-auto mr-auto -bottom-4 p-5  dark:bg-darkish bg-lightish'>
+      <nav className='md:hidden border-t-2 ipadmini:border-r-2 ipadmini:border-l-2 border-lightGray max-w-md flex z-10  mb-4  justify-center gap-6 fixed right-0 left-0 max-w-s ml-auto mr-auto -bottom-4 p-5  dark:bg-darkish bg-lightish'>
             <ThemeSwitch styles='flex items-center'/>
             {links.map(each => {
               return <div key={each.page}><Sublinker item={each} state={toggle} setState={setToggle}/></div>
