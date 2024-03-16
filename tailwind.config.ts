@@ -14,6 +14,9 @@ const config: Config = {
       "tablet" : "1020px"
 
     },
+    variants: {
+      display:['group-hover']
+     },
     extend: {
       fontFamily: {
         inter: ["Inter, sans-serif"]
